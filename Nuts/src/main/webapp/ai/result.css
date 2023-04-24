@@ -1,0 +1,31 @@
+@charset "UTF-8";
+
+#result{
+    display: none;
+    background-color: whitesmoke;
+    width: 40%;
+    text-align: center;
+    border-radius: 20px;
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
+
+}
+.resultDesc{
+    font-size: 20px;
+}
+
+.resultname{
+    font-size: 20px;
+}
+
+.kakao{
+    color: rgb(84, 79, 79);
+    background-color: #359381;
+    font-size: 20px;
+    border: 0px;
+    border-radius: 20px;
+    font-weight: bold;
+}
+.kakao:hover, .kakao:focus{
+    background-color: whitesmoke;
+    color: #359381;
+}

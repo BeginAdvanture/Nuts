@@ -1,0 +1,589 @@
+create table member(   
+    id         varchar2(20)  primary key,
+    pwd        varchar2(20),     
+    name       varchar2(40),
+    email      varchar2(40),
+    zip_num    varchar2(7),
+    address    varchar2(100),
+    phone      varchar2(20),
+    useyn      char(1)       default 'y',
+    indate     date          default sysdate
+);
+
+select * from board;
+
+//회원 
+create table worker(          
+    id          varchar2(20)  primary key,
+    pwd         varchar2(20),
+    name        varchar2(40),
+    phone       varchar2(20)
+);
+
+-- 샘플 데이터 입력
+insert into worker values('admin', 'admin', 'asdad', '010-777-7777');
+insert into worker values('pinksung', 'pinksung', 'asdasd', '010-999-9696');
+/관리자 회원 가입
+
+create sequence products_seq start with 1;
+
+create table products(
+    pseq       number(5)     primary key,
+    name       varchar2(100),
+    kind       char(1),   
+    price      number(7)      default '0',
+    
+    content1    varchar2(1000),
+    content2    varchar2(1000),
+    content3    varchar2(1000),
+    image       varchar2(50)  default 'default.jpg',
+    useyn       char(1)       default 'y',
+    bestyn      char(1)       default 'n',
+    indate      date          default sysdate,  
+   
+     human      char(1),
+    caoont      number(4) default (0)
+);
+
+insert into products(pseq, name, kind, price ,content1,content2,content3, image, bestyn, human, caoont) values(
+products_seq.nextval, 'California Gold Nutrition Lutein', '1' 
+, '15000' ,'성별무관','20mg 60정', '캘리포니아골드뉴트리션','CaliforniaGoldNutritionLutein.jpg', 'n', '1', 0);
+
+insert into products(pseq, name, kind, price ,content1,content2,content3, image, bestyn, human, caoont) values(
+products_seq.nextval, 'Now Lutein', '1' 
+, '18690' ,'성별무관','10mg 120정', '나우푸드','nowLutein.jpg', 'n', '1', 0);
+
+insert into products(pseq, name, kind, price ,content1,content2,content3, image, bestyn, human, caoont) values(
+products_seq.nextval, 'NaturalFactors Lutein', '1' 
+, '26800' ,'성별무관','20mg 120정', '네추럴팩터스','NaturalFactorsLutein.jpg', 'y', '1', 0);
+
+insert into products(pseq, name, kind, price ,content1,content2,content3, image, bestyn, human, caoont) values(
+products_seq.nextval, 'GummiKing Lutein', '1' 
+, '17600' ,'어린이','60구미', '구미킹','GummiKingLutein.jpg', 'n', '4', 0);
+
+insert into products(pseq, name, kind, price ,content1,content2,content3, image, bestyn, human, caoont) values(
+products_seq.nextval, 'Solgar Lutein', '1' 
+, '18700' ,'성별무관','20mg 60정', '솔가','DoctorsBestGumiLutein.jpg', 'n', '1', 0);
+
+insert into products(pseq, name, kind, price ,content1,content2,content3, image, bestyn, human, caoont) values(
+products_seq.nextval, 'Doctors Best Lutein', '1' 
+, '16470' ,'성별무관', '20mg 60정', '닥터베스트','DoctorsBestLutein.jpg', 'n', '1', 0);
+
+insert into products(pseq, name, kind, price ,content1,content2,content3, image, bestyn, human, caoont) values(
+products_seq.nextval, 'Doctors Best Gumi Lutein', '1' 
+, '24800' ,'성별무관', '60구미', '닥터베스트','DoctorsBestGumiLutein.jpg', 'n', '1', 0);
+
+insert into products(pseq, name, kind, price ,content1,content2,content3, image, bestyn, human, caoont) values(
+products_seq.nextval, 'Carlson Lutein', '1' 
+, '17300' ,'성별무관', '6mg 180정', '칼슨','CarlsonLutein.jpg', 'n', '1', 0);
+
+insert into products(pseq, name, kind, price ,content1,content2,content3, image, bestyn, human, caoont) values(
+products_seq.nextval, 'Gummiology Lutein', '1' 
+, '24800' ,'성별무관', '90개', '구미올로지','GummiologyLutein.jpg', 'n', '1', 0);
+
+insert into products(pseq, name, kind, price ,content1,content2,content3, image, bestyn, human, caoont) values(
+products_seq.nextval, 'Cenovls Magnesium', '2' 
+, '14460' ,'성별무관','284mg 90정', '사노피아베티스','SolgarMagnesium.jpg', 'n', '1', 0);
+
+insert into products(pseq, name, kind, price ,content1,content2,content3, image, bestyn, human, caoont) values(
+products_seq.nextval, 'Bluebonnet Chelated Magnesium', '2' 
+, '38900' ,'성별무관', '200mg 120정', '블루보넷', 'BluebonnetChelatedMagnesium.jpg', 'n', '1', 0);
+
+insert into products(pseq, name, kind, price ,content1,content2,content3, image, bestyn, human, caoont) values(
+products_seq.nextval, 'Active Magnesium Plus', '2' 
+, '11400' ,'성별무관', '315mg 120정', '일양약품', 'ActiveMagnesiumPlus.jpg', 'n', '1', 0);
+
+insert into products(pseq, name, kind, price ,content1,content2,content3, image, bestyn, human, caoont) values(
+products_seq.nextval, 'Doctors Best Magnesium', '2' 
+, '23850' ,'성별무관', '300mg 240정', '닥터베스트', 'DoctorsBestMagnesium.jpg', 'n', '1', 0);
+
+insert into products(pseq, name, kind, price ,content1,content2,content3, image, bestyn, human, caoont) values(
+products_seq.nextval, 'Nutri Core Magnesium', '2' 
+, '35000' ,'성별무관', '150mg 180정', '다움', 'NutriCoreMagnesium.jpg', 'n' ,'1', 0);
+
+insert into products(pseq, name, kind, price ,content1,content2,content3, image, bestyn, human, caoont) values(
+products_seq.nextval, 'Gnm Magnesium', '2' 
+, '10980' ,'성별무관', '315mg 120정', 'GNM', 'GnmMagnesium.jpg', 'n', '1', 0);
+
+insert into products(pseq, name, kind, price ,content1,content2,content3, image, bestyn, human, caoont) values(
+products_seq.nextval, 'Now Foods Magnesium', '2' 
+, '21435' ,'성별무관', '400mg 120정', '나우푸드', 'NowFoodsMagnesium.jpg', 'n', '1', 0);
+
+insert into products(pseq, name, kind, price ,content1,content2,content3, image, bestyn, human, caoont) values(
+products_seq.nextval, 'Gnc Magnesium', '2' 
+, '24340' ,'성별무관', '250mg 120캡슐', 'GNC', 'GncMagnesium.jpg', 'n', '1', 0);
+
+insert into products(pseq, name, kind, price ,content1,content2,content3, image, bestyn, human, caoont) values(
+products_seq.nextval, 'Solgar Magnesium', '2' 
+, '19000' ,'성별무관', '550mg 100정', '솔가', 'SolgarMagnesium.jpg', 'n', '1', 0);
+
+insert into products(pseq, name, kind, price ,content1,content2,content3, image, bestyn, human, caoont) values(
+products_seq.nextval, 'Now Foods Milk Thistle', '3' 
+, '19840' ,'성별무관', '240mg 200캡슐', '나우푸드', 'NowFoodsMilkThistle.jpg', 'y', '1', 0);
+
+insert into products(pseq, name, kind, price ,content1,content2,content3, image, bestyn, human, caoont) values(
+products_seq.nextval, 'Gnc Milk Thistle', '3' 
+, '16490' ,'성별무관', '130mg 60캡슐', 'GNC', 'GncMilkThistle.jpg', 'n', '1', 0);
+
+insert into products(pseq, name, kind, price ,content1,content2,content3, image, bestyn, human, caoont) values(
+products_seq.nextval, 'Natural Plus Milk Thistle', '3' 
+, '4800' ,'성별무관', '130mg 60캡슐', 'GNC', 'NaturalPlusMilkThistle.jpg', 'n', '1', 0);
+
+insert into products(pseq, name, kind, price ,content1,content2,content3, image, bestyn, human, caoont) values(
+products_seq.nextval, 'Natures Way Milk Thistle', '3' 
+, '42500' ,'성별무관', '140mg 100캡슐', '네이처스웨이', 'NaturesWayMilkThistle.jpg', 'n', '1', 0);
+
+insert into products(pseq, name, kind, price ,content1,content2,content3, image, bestyn, human, caoont) values(
+products_seq.nextval, 'Life Extension Milk Thistle', '3' 
+, '35180' ,'성별무관', '160mg 120정', '라이프익스텐션', 'LifeExtensionMilkThistle.jpg', 'n', '1', 0);
+
+insert into products(pseq, name, kind, price ,content1,content2,content3, image, bestyn, human, caoont) values(
+products_seq.nextval, 'California Gold Nutrition Milk Thistle', '3' 
+, '36800' ,'성별무관', '300mg 360정', '캘리포니아골드뉴트리션', 'CaliforniaGoldNutritionMilkThistle.jpg', 'n', '1', 0);
+
+insert into products(pseq, name, kind, price ,content1,content2,content3, image, bestyn, human, caoont) values(
+products_seq.nextval, 'Solgar Milk Thistle', '3' 
+, '31200' ,'성별무관', '130mg 60캡슐', '솔가', 'SolgarMilkThistle.jpg', 'n', '1', 0);
+
+insert into products(pseq, name, kind, price ,content1,content2,content3, image, bestyn, human, caoont) values(
+products_seq.nextval, 'Denps Milk Thistle', '3' 
+, '25000' ,'성별무관', '130mg 30포', '비오팜', 'DenpsMilkThistle.jpg', 'n', '1', 0);
+
+insert into products(pseq, name, kind, price ,content1,content2,content3, image, bestyn, human, caoont) values(
+products_seq.nextval, 'Naturalize Milk Thistle', '3' 
+, '19290' ,'성별무관', '130mg 90캡슐', '내추럴라이프뉴트리션', 'NaturalizeMilkThistle.jpg', 'n', '1', 0);
+
+insert into products(pseq, name, kind, price ,content1,content2,content3, image, bestyn, human, caoont) values(
+products_seq.nextval, 'Doctors Best VitaminC', '4' 
+, '22070' ,'성별무관', '1000mg 120캡슐', '닥터베스트', 'DoctorsBestVitaminC.jpg', 'n', '1', 0);
+
+insert into products(pseq, name, kind, price ,content1,content2,content3, image, bestyn, human, caoont) values(
+products_seq.nextval, 'Solgar Ester-C Plus VitaminC', '4' 
+, '26450' ,'성별무관', '1000mg 180정', '솔가', 'SolgarEsterCPlusVitaminC.jpg', 'y', '1', 0);
+
+insert into products(pseq, name, kind, price ,content1,content2,content3, image, bestyn, human, caoont) values(
+products_seq.nextval, 'Nutri Core VitaminC', '4' 
+, '35670' ,'성별무관', '100mg 60정', '다움', 'NutriCoreVitaminC.jpg', 'y', '1', 0);
+
+insert into products(pseq, name, kind, price ,content1,content2,content3, image, bestyn, human, caoont) values(
+products_seq.nextval, 'Haroutine Liposome VitaminC', '4' 
+, '42000' ,'성별무관', '500mg 90정', '우리바이오', 'HaroutineLiposomeVitaminC.jpg', 'y', '1', 0);
+
+insert into products(pseq, name, kind, price ,content1,content2,content3, image, bestyn, human, caoont) values(
+products_seq.nextval, 'Kirkland VitaminC', '4' 
+, '9980' ,'성별무관', '1000mg 500정', '커클랜드', 'KirklandVitaminC.jpg', 'y', '1', 0);
+
+insert into products(pseq, name, kind, price ,content1,content2,content3, image, bestyn, human, caoont) values(
+products_seq.nextval, 'Life Care VitaminC', '4' 
+, '54220' ,'성별무관', '3mg 100포', '한국바이오팜', 'LifeCareVitaminC.jpg', 'n', '1', 0);
+
+insert into products(pseq, name, kind, price ,content1,content2,content3, image, bestyn, human, caoont) values(
+products_seq.nextval, 'Lemona', '4' 
+, '18760' ,'성별무관', '520mg 120포', '경남제약', 'Lemona.jpg', 'y', '1', 0);
+
+insert into products(pseq, name, kind, price ,content1,content2,content3, image, bestyn, human, caoont) values(
+products_seq.nextval, 'Now Foods Omega-3', '5' 
+, '16590' ,'성별무관','300mg 200정', '나우푸드','NowFoodsOmega-3.jpg','n','1', 0);
+
+insert into products(pseq, name, kind, price ,content1,content2,content3, image, bestyn, human, caoont) values(
+products_seq.nextval, 'Solgar Omega-3', '5' 
+, '27600' ,'성별무관','700mg 60정', '솔가','SolgarOmega-3.jpg', 'n','1', 0);
+
+insert into products(pseq, name, kind, price ,content1,content2,content3,image, bestyn, human, caoont) values(
+products_seq.nextval, '21st Century Omega-3', '5' 
+, '22270' ,'성별무관','360mg 140정', '21세기 센트리', '21stCenturyOmega-3.jpg', 'n','1', 0);
+
+insert into products(pseq, name, kind, price ,content1,content2,content3, image, bestyn, human, caoont) values(
+products_seq.nextval, 'Nordic Naturals Ultimate Omega-3', '5' 
+, '55890' ,'성별무관','550mg 180정', '노르딕내추럴스', 'NordicNaturalsOmega-3.jpg', 'n','1', 0);
+
+insert into products(pseq, name, kind, price ,content1,content2,content3, image, bestyn, human, caoont) values(
+products_seq.nextval, 'Natures Plus Omega-3/6/9', '5' 
+, '55160' ,'성별무관','212mg 120정', '네이처스 플러스', 'NaturesPlusOmega-3.6.9.jpg', 'n','1', 0);
+
+insert into products(pseq, name, kind, price ,content1,content2,content3, image, bestyn, human, caoont) values(
+products_seq.nextval, 'Thompson Omega-3', '5' 
+, '15640' ,'성별무관','120mg 100정', '톰슨', 'ThompsonOmega-3.jpg', 'n', '1', 0);
+
+insert into products(pseq, name, kind, price ,content1,content2,content3, image, bestyn, human, caoont) values(
+products_seq.nextval, 'Nutri Core Omega-3', '5' 
+, '34900' ,'성별무관','120mg 30정', '뉴트리코어', 'NutriCoreOmega-3.jpg', 'n', '1', 0);
+
+insert into products(pseq, name, kind, price ,content1,content2,content3, image, bestyn, human, caoont) values(
+products_seq.nextval, 'Inter Omega-3', '5' 
+, '39900' ,'성별무관','1100mg 180정', '인테로', 'InterOmega-3.jpg', 'n', '1', 0);
+
+insert into products(pseq, name, kind, price ,content1,content2,content3, image, bestyn, human, caoont) values(
+products_seq.nextval, 'Dr.Lean Omega-3', '5' 
+, '7630' ,'성별무관','1025mg 30정', '노바렉스', 'Dr.LeanOmga-3.jpg', 'n', '1', 0);
+
+insert into products(pseq, name, kind, price ,content1,content2,content3, image, bestyn, human, caoont) values(
+products_seq.nextval, 'King Premium Probiotics', '6' 
+, '24500' ,'여자','500mg 60정', '헬스앤다이어트', 'KingPremiumProbiotics.jpg', 'n', '2', 0);
+
+insert into products(pseq, name, kind, price ,content1,content2,content3, image, bestyn, human, caoont) values(
+products_seq.nextval, 'Lacto Fit', '6' 
+, '8700' ,'성별무관','2mg 50정', '종근당건강', 'LactoFit.jpg', 'y', '1', 0);
+
+insert into products(pseq, name, kind, price ,content1,content2,content3, image, bestyn, human, caoont) values(
+products_seq.nextval, 'Denps Pro Bio', '6' 
+, '23280' ,'성별무관','170mg 60정', '크리스찬한센', 'DenpsProBio.jpg', 'n', '1', 0);
+
+insert into products(pseq, name, kind, price ,content1,content2,content3, image, bestyn, human, caoont) values(
+products_seq.nextval, '다이어트 유산균 비에날씬', '6' 
+, '35800' ,'성별무관','450mg 60정', '크리스찬한센', '다이어트유산균비에날씬.jpg', 'n', '1', 0);
+
+insert into products(pseq, name, kind, price ,content1,content2,content3, image, bestyn, human, caoont) values(
+products_seq.nextval, 'De Simone', '6' 
+, '81640' ,'성별무관','540mg 60정', '드시모네', 'Dr.LeanOmga-3.jpg', 'n', '1', 0);
+
+insert into products(pseq, name, kind, price ,content1,content2,content3, image, bestyn, human, caoont) values(
+products_seq.nextval, 'De Simone Kids', '6' 
+, '78000' ,'어린이','1.5g 30정', '드시모네', 'DeSimoneKids.jpg', 'n', '4', 0);
+
+insert into products(pseq, name, kind, price ,content1,content2,content3, image, bestyn, human, caoont) values(
+products_seq.nextval, 'Duolac', '6' 
+, '44990' ,'어린이','750mg 80정', '듀오락', 'Duolac.jpg', 'n', '4', 0);
+
+insert into products(pseq, name, kind, price ,content1,content2,content3, image, bestyn, human, caoont) values(
+products_seq.nextval, '10Billions Probiotics', '6' 
+, '14220' ,'성별무관','500mg 60정', '네추럴이믹스헬스', '10BillionsPrbiotics.jpg', 'n', '1', 0);
+
+insert into products(pseq, name, kind, price ,content1,content2,content3, image, bestyn, human, caoont) values(
+products_seq.nextval, 'Micro Bio Post', '6' 
+, '8450' ,'성별무관','4g 30정', '네추럴에프앤피', 'MicroBioPost.jpg', 'n', '1', 0);
+
+insert into products(pseq, name, kind, price ,content1,content2,content3, image, bestyn, human, caoont) values(
+products_seq.nextval, 'Micro Bio Max', '6' 
+, '5530' ,'성별무관','4g 30정', '코스맥스바이오', 'MicroBioMax.jpg', 'n', '1', 0);
+
+insert into products(pseq, name, kind, price ,content1,content2,content3, image, bestyn, human, caoont) values(
+products_seq.nextval, 'Now Foods Men Multiple', '7' 
+, '24000' ,'남자','1600mg 60정', '나우푸드', 'NowFoodsMensMultiple.jpg', 'n', '3', 0);
+
+insert into products(pseq, name, kind, price ,content1,content2,content3, image, bestyn, human, caoont) values(
+products_seq.nextval, 'Natures Way Alive Mens Multiple', '7' 
+, '24100' ,'남자','60mg 60정', '네이처스 웨이', 'NaturesWayAliveMensMultiple.jpg', 'n', '3', 0);
+
+insert into products(pseq, name, kind, price ,content1,content2,content3, image, bestyn, human, caoont) values(
+products_seq.nextval, '21st Century Mens Multiple', '7' 
+, '5700' ,'남자','100정', '21세기 센트리', 'MicroBioMax.jpg', 'n', '3', 0);
+
+insert into products(pseq, name, kind, price ,content1,content2,content3, image, bestyn, human, caoont) values(
+products_seq.nextval, 'Natures Way Alive Gumi Mens Multiple', '7' 
+, '17700' ,'남자','75정', '네이처스 웨이', 'Natures WayAliveGumiMensMultiple.jpg', 'n', '3', 0);
+
+insert into products(pseq, name, kind, price ,content1,content2,content3, image, bestyn, human, caoont) values(
+products_seq.nextval, 'California Gold Nutrition Gumi Mens Multiple', '7' 
+, '16000' ,'남자','90정', '캐리포니아 골드', 'CaliforniaGoldNutritionGumiMensMultiple.jpg', 'n', '3', 0);
+
+insert into products(pseq, name, kind, price ,content1,content2,content3, image, bestyn, human, caoont) values(
+products_seq.nextval, '21st Century Womens Multiple', '7' 
+, '5700' ,'여자','100정', '21세기 센트리', '21stCenturyWomensMultiple.jpg', 'n', '2', 0);
+
+insert into products(pseq, name, kind, price ,content1,content2,content3, image, bestyn, human, caoont) values(
+products_seq.nextval, 'Now Foods Softgels Womens Multiple', '7' 
+, '45000' ,'여자','180정', '나우푸드', 'NowFoodsSoftgelsWomensMultiple.jpg', 'y', '2', 0);
+
+insert into products(pseq, name, kind, price ,content1,content2,content3, image, bestyn, human, caoont) values(
+products_seq.nextval, 'Natures Way, Alive Gumi Womens Multiple', '7' 
+, '24322' ,'여자','130정', '네이처스 웨이', 'NaturesWay, AliveGumi WomensMultiple.jpg', 'n', '2', 0);
+
+insert into products(pseq, name, kind, price ,content1,content2,content3, image, bestyn, human, caoont) values(
+products_seq.nextval, 'Nature Made Womens Multiple', '7' 
+, '17505' ,'여자','90정', '네이처메이드', 'NatureMadeWomensMultiple.jpg', 'n', '2', 0);
+
+insert into products(pseq, name, kind, price ,content1,content2,content3, image, bestyn, human, caoont) values(
+products_seq.nextval, '21stCentury, Sentry Womens Multiple', '7' 
+, '8520' ,'여자','120정', '21세기 센트리', '21stCentury,SentryWomensMultiple.jpg', 'n', '2', 0);
+
+insert into products(pseq, name, kind, price ,content1,content2,content3, image, bestyn, human, caoont) values(
+products_seq.nextval, 'Natures Way, Alive Kids Multiple', '7' 
+, '15956' ,'어린이','120정', '네이처스 웨이', 'Natures Way,AliveKidsMultiple.jpg', 'n', '4', 0);
+
+insert into products(pseq, name, kind, price ,content1,content2,content3, image, bestyn, human, caoont) values(
+products_seq.nextval, 'NaturesPlus Source of Life Gold Kids Multiple', '7' 
+, '26760' ,'어린이','120정', '네이처스 플러스', 'NaturesPlus SourceofLifeGoldKidsMultiple.jpg', 'n', '4', 0);
+
+insert into products(pseq, name, kind, price ,content1,content2,content3, image, bestyn, human, caoont) values(
+products_seq.nextval, 'Gummi king Kids Multiple', '7' 
+, '12058' ,'어린이','60정', '거미킹', 'GummikingKidMultiple.jfif', 'n', '4', 0);
+
+create sequence cart_seq start with 1;
+create table cart (
+  cseq         number(10)    primary key,  -- 장바구니번호
+  id           varchar(16)   references member(id),  -- 주문자 아이디(FK :　member.id) 
+  pseq         number(5)     references products(pseq), -- 주문 상품번호(FK :product.pseq) 
+  quantity     number(5)     default 1,        -- 주문 수량
+  result       char(1)       default '1',      -- 1:미처리 2:처리
+  indate       date          default SYSDATE   -- 주문일
+);
+create or replace view cart_view
+as
+select o.cseq, o.id, o.pseq, m.name mname, p.name pname, 
+o.quantity, o.indate, p.price, o.result 
+from cart o, member m, products p 
+where o.id = m.id and o.pseq = p.pseq
+and result='1';
+
+
+insert into cart(cseq,id, pseq, quantity) values(cart_seq.nextval, 'one', 1, 1);
+
+////////////////////////////////////////////////////////////////////////////////////
+
+
+create sequence orders_seq start with 1;
+
+create table orders(
+  oseq        number(10)    primary key,           -- 주문번호  
+  id          varchar(16)   references member(id), -- 주문자 아이디
+  indate      date          default sysdate       -- 주문일
+);
+
+
+insert into orders(oseq, id) values(orders_seq.nextval, 'one');
+insert into orders(oseq, id) values(orders_seq.nextval, 'one');
+insert into orders(oseq, id) values(orders_seq.nextval, 'two');
+
+
+create sequence order_detail_seq start with 1;
+create table order_detail(
+  odseq       number(10)   primary key,        -- 주문상세번호
+  oseq        number(10)   references orders(oseq),   -- 주문번호  
+  pseq        number(5)    references products(pseq),  -- 상품번호
+  quantity    number(5)    default 1,                 -- 주문수량
+  result      char(1)      default '1'                -- 1: 미처리 2: 처리     
+);
+
+
+insert into order_detail(odseq, oseq, pseq, quantity) 
+values(order_detail_seq.nextval, 1, 1, 1);
+insert into order_detail(odseq, oseq, pseq, quantity) 
+values(order_detail_seq.nextval, 1, 2, 5);
+insert into order_detail(odseq, oseq, pseq, quantity) 
+values(order_detail_seq.nextval, 2,  4, 3);
+insert into order_detail(odseq, oseq, pseq, quantity) 
+values(order_detail_seq.nextval, 3, 3, 1);
+insert into order_detail(odseq, oseq, pseq, quantity) 
+values(order_detail_seq.nextval, 3, 2, 1);
+insert into order_detail(odseq, oseq, pseq, quantity) 
+values(order_detail_seq.nextval, 3, 6, 2);
+insert into order_detail(odseq, oseq, pseq, quantity) 
+values(order_detail_seq.nextval, 3, 1, 2);
+
+
+
+
+
+
+create or replace view order_view
+as
+select d.odseq, o.oseq, o.id, o.indate, d.pseq,d.quantity, m.name mname,
+m.zip_num, m.address, m.phone, p.name pname, p.price, d.result   
+from orders o, order_detail d, member m, products p 
+where o.oseq=d.oseq and o.id = m.id and d.pseq = p.pseq;
+
+
+///////////////////////////////////////////////////////////////////////////////////////////
+create sequence qna_seq start with 1;
+create table qna (
+  qseq        number(5)    primary key,  -- 글번호 
+  subject     varchar(300),            -- 제목
+  content     varchar(1000),          -- 문의내용
+  reply       varchar(1000),           -- 답변내용
+  id          varchar(20),                 -- 작성자(FK : member.id) 
+  rep         char(1)       default '1',        --1:답변 무  2:답변 유  
+  indate      date default  sysdate     -- 작성일
+); 
+
+////////////////////////////////////////////////////////////////qna
+
+select * from board;
+
+///
+   루테인 kind '1'
+   마그네슘 kind '2'
+   밀크씨슬 kind '3'
+   비타민C kind '4'
+   오메가3 kind '5'
+   유산균 kind '6'
+   종합비타민 kind '7'
+/// 
+    성별무관 human '1'
+    여자 human '2'
+    남자 human '3'
+    어린이 human '4'
+///
+
+
+
+DROP VIEW best_pro_view_1;
+-- 베스트 상품
+create or replace view best_pro_view_1
+as
+select pseq, name, price, image 
+from( select rownum, pseq, name, price, image 
+      from products  
+      where bestyn='y' 
+      order by indate desc)
+where  rownum <=8;
+
+-- 신상품
+create or replace view new_pro_view_1
+as
+select pseq, name, price, image 
+from( select rownum, pseq, name, price, image 
+      from products  
+      where useyn='y' 
+      order by indate desc)
+where  rownum <=4;
+commit;
+///////////////////////////////////////////////////////////////////
+
+
+///찜하기
+
+create sequence heart_seq start with 1;
+
+create table heart (
+  cseq         number(10)    primary key,  -- 장바구니번호
+  id           varchar(16)   references member(id),  -- 주문자 아이디(FK :　member.id) 
+  pseq         number(5)     references products(pseq), -- 주문 상품번호(FK :product.pseq) 
+  quantity     number(5)     default 1,        -- 주문 수량
+  result       char(1)       default '1',      -- 1:미처리 2:처리
+  indate       date          default SYSDATE   -- 주문일
+);
+
+insert into heart(cseq,id, pseq, quantity) values(heart_seq.nextval, 'one', 1, 1);
+create or replace view heart_view
+as
+select h.cseq, h.id, h.pseq, m.name mname, p.name pname, 
+h.quantity, h.indate, p.price, h.result 
+from heart h, member m, products p 
+where h.id = m.id and h.pseq = p.pseq
+and h.result='1';
+
+
+
+
+drop table worker;
+
+drop table qna;
+drop table products;
+
+drop table orders;
+drop table order_detail;
+drop table heart;
+drop table cart;
+////////////////////////
+
+
+
+drop sequence board_seq;
+drop table board;
+create sequence board_seq;
+
+ CREATE TABLE BOARD(   "NUM" NUMBER(8,0), 
+   "NAME" VARCHAR2(30 BYTE) NOT NULL ENABLE, 
+   "EMAIL" VARCHAR2(40 BYTE), 
+   "PASS" VARCHAR2(20 BYTE) NOT NULL ENABLE, 
+   "TITLE" VARCHAR2(100 BYTE) NOT NULL ENABLE, 
+   "CONTENT" VARCHAR2(4000 BYTE), 
+   "READCOUNT" NUMBER DEFAULT 0 NOT NULL ENABLE, 
+   "WRITEDATE" TIMESTAMP (6) DEFAULT SYSTIMESTAMP, 
+   "IMAGE" VARCHAR2(200 BYTE), 
+   "REF" NUMBER DEFAULT 0, 
+   "RE_STEP" NUMBER DEFAULT 0, 
+   "RE_LEVEL" NUMBER DEFAULT 1, 
+    PRIMARY KEY ("NUM")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "SYSTEM"  ENABLE
+   ) SEGMENT CREATION IMMEDIATE 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 NOCOMPRESS LOGGING
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "SYSTEM" ;
+
+
+
+
+
+ CREATE TABLE board (
+  num NUMBER(8),
+  name VARCHAR2(30) NOT NULL,
+  email VARCHAR2(40),
+  pass VARCHAR2(20) NOT NULL,
+  title VARCHAR2(100) NOT NULL,
+  content VARCHAR2(4000),
+  readcount NUMBER not null,    
+  writedate TIMESTAMP not null
+);
+
+UPDATE board
+SET ref = 0, re_step = 0, re_level = 1;
+
+
+ALTER TABLE board ADD (
+    image VARCHAR2(50)
+    );
+
+ALTER TABLE board
+ADD ref NUMBER(8) DEFAULT 0,
+    re_step NUMBER(8) DEFAULT 0,
+    re_level NUMBER(8) DEFAULT 1;
+
+SELECT LPAD(' ', 4*(re_level-1)) || num AS num, name, email, pass, LPAD(' ', 4*(re_level-1)) || title AS title, content, readcount, writedate, image, ref, re_step, re_level
+FROM board
+START WITH ref = 0
+CONNECT BY PRIOR num = ref
+ORDER SIBLINGS BY re_step;
+
+select * from member;
+
+
+
+
+
+INSERT INTO board (num, name, email, pass, title, content, readcount, writedate)
+VALUES (1, 'John', 'john@example.com', 'password123', 'Hello World', 'This is the content', 0, SYSTIMESTAMP);
+
+
+
+drop sequence board_seq;
+
+drop table board;
+create sequence board_seq;
+
+CREATE TABLE BOARD(
+"NUM" NUMBER(8,0), 
+   "NAME" VARCHAR2(30 BYTE) NOT NULL ENABLE, 
+   "EMAIL" VARCHAR2(40 BYTE), 
+   "PASS" VARCHAR2(20 BYTE) NOT NULL ENABLE, 
+   "TITLE" VARCHAR2(100 BYTE) NOT NULL ENABLE, 
+   "CONTENT" VARCHAR2(4000 BYTE), 
+   "READCOUNT" NUMBER DEFAULT 0 NOT NULL ENABLE, 
+   "WRITEDATE" TIMESTAMP (6) DEFAULT SYSTIMESTAMP, 
+   "IMAGE" VARCHAR2(200 BYTE), 
+   "REF" NUMBER DEFAULT 0, 
+   "RE_STEP" NUMBER DEFAULT 0, 
+   "RE_LEVEL" NUMBER DEFAULT 1, 
+    PRIMARY KEY ("NUM")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "SYSTEM"  ENABLE
+   ) SEGMENT CREATION IMMEDIATE 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 NOCOMPRESS LOGGING
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "SYSTEM" ;
+
+
+
+commit;
+
+
+
+

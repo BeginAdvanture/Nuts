@@ -1,0 +1,107 @@
+@charset "UTF-8"; 
+
+@import
+	url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap')
+	;
+
+:root {
+	--primary-color: #359381; /* 기본 색상(청록색) */
+}
+
+body {
+	background-image: url(../images/hill1.png), url(../images/hill2.png),
+		url(../images/hill3.png), url(../images/hill4.png),
+		url(../images/hill5.png), url(../images/hill6.png),
+		url(../images/hill7.png), url(../images/hill8.png);
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Poppins', sans-serif;
+}
+
+#wrap {
+	width: 971px;
+	margin: 0 auto;
+}
+
+h1 {
+	color: var(--primary-color);
+}
+
+table {
+	width: 100%;
+	border-collapse: collapse;
+	font-size: 12px;
+	line-height: 24px;
+	background-color: #fff;
+	color: #333;
+}
+
+table td, th {
+	border: #d3d3d3 solid 1px;
+	padding: 5px;
+}
+
+th {
+	background-color: var(--primary-color);
+	color: #fff;
+	text-align: center;
+	padding: 10px;
+}
+
+tr:hover {
+	background-color: #d9d9d9;
+}
+
+tr {
+	background-color: rgba(242, 242, 242, 0.7);
+}
+
+img {
+	width: 220px;
+	height: 300px;
+}
+
+a {
+	text-decoration: none;
+	color: black;
+}
+
+a:hover {
+	text-decoration: underline;
+	color: var(--primary-color);
+}
+
+img:hover {
+	opacity: 0.8;
+}
+
+td img {
+	width: 200px;
+	height: 200px;
+}
+
+h1 {
+	margin-bottom: 20px;
+}
+
+.my-button {
+	background-color: #46C6C6;
+	color: white;
+	border-radius: 20px;
+	padding: 10px 20px;
+	font-size: 16px;
+	font-weight: bold;
+	border: none;
+	cursor: pointer;
+}
+
+.my-button:hover {
+	background-color: #31E0C1; /* hover시 배경색 변경 */
+	color: black;
+}

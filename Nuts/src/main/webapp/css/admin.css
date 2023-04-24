@@ -1,0 +1,217 @@
+@charset "UTF-8"; 
+
+ @charset "UTF-8";
+
+* {
+	margin: 0;
+	font-family: 'Raleway', sans-serif;
+}
+
+body {
+	background-image: url(./images/hill1.png), url(./images/hill2.png),
+		url(./images/hill3.png), url(./images/hill4.png),
+		url(./images/hill5.png), url(./images/hill6.png),
+		url(./images/hill7.png), url(./images/hill8.png);
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.container {
+	margin: 0;
+}
+
+.box {
+	height: 767px;
+	padding: 20px;
+	display: flex;
+	gap: 20px;
+}
+
+.box-sidebar, .box-contents {
+	background: linear-gradient(to bottom, rgba(53, 147, 129, 0.5),
+		rgba(108, 181, 184, 0.5), rgba(162, 217, 214, 0.5),
+		rgba(216, 240, 242, 0.5), rgba(255, 255, 255, 0.5));
+	border: 1px solid rgb(206, 202, 202);
+	border-radius: 10px;
+	padding: 20px;
+}
+
+.box-sidebar {
+	width: 180px;
+	flex-shrink: 0;
+}
+
+.box-sidebar h2 {
+	padding-top: 10px;
+	padding-bottom: 10px;
+	text-align: center;
+	font-size: 32px;
+	color: #000000;
+	text-shadow: 2px 0 0 #FFFFFF, 0 -2px 0 #FFFFFF, 0 2px 0 #FFFFFF, -2px 0
+		0 #FFFFFF;
+}
+
+.box-sidebar .one {
+	padding-right: 18px;
+}
+
+.box-sidebar .two {
+	padding-right: 16px;
+}
+
+.box-sidebar .three {
+	margin-top: 100px;
+	padding-right: 19px;
+}
+
+.box-sidebar ul {
+	text-align: center;
+	padding-left: 0px;
+}
+
+.box-sidebar ul i {
+	margin-right: 15px;
+}
+
+.box-sidebar ul li {
+	list-style: none;
+	margin-top: 55px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	background-color: rgb(0, 139, 139);
+	border-radius: 10px;
+}
+
+.box-sidebar ul a {
+	text-decoration: none;
+	color: white;
+	font-size: 18px;
+	font-weight: bold;
+}
+
+.box-contents {
+	flex-grow: 1;
+	padding: 20px;
+	border: 1px solid #ccc;
+	padding: 20px;
+}
+
+.title {
+	text-align: center;
+	margin-bottom: 20px;
+	padding-bottom: 20px;
+	border-bottom: 2px solid white;
+}
+
+.title h2 {
+	text-align: center;
+	font-size: 25px;
+	color: #000000;
+	text-shadow: 2px 0 0 #FFFFFF, 0 -2px 0 #FFFFFF, 0 2px 0 #FFFFFF, -2px 0
+		0 #FFFFFF;
+}
+
+.main-container {
+	margin-top: 20px;
+}
+
+.faq-container1 {
+	background-color: rgba(255, 255, 255, 0.7);
+	border: 1px solid #ccc;
+	border-radius: 10px;
+	padding: 20px;
+	height: 610px;
+}
+
+.table {
+	border-collapse: collapse;
+	box-sizing: content-box;
+	margin-bottom: 20px;
+}
+
+.table table {
+	box-sizing: content-box;
+	width: 100%;
+}
+
+th {
+	background-color: #359381;
+	color: #fff;
+	font-weight: bold;
+	text-align: center;
+	padding: 10px;
+}
+
+td {
+	border: 1px solid #ccc;
+	padding: 10px;
+	text-align: center;
+}
+
+.table td a {
+	text-decoration: none;
+	color: green;
+	font-weight: bold;
+}
+
+.table td .tb-title {
+	font-weight: bold;
+}
+
+.table .Nadd {
+	border: white;
+	text-align: right;
+}
+
+.table .Nadd a {
+	color: white;
+	font-weight: bold;
+	background: rgba(42, 121, 108, 0.8);
+	border: 1px solid #ccc;
+	border-radius: 8px;
+	padding: 5px;
+}
+
+.table .Madd {
+	border: white;
+	text-align: right;
+}
+
+.table .Madd a {
+	color: white;
+	font-weight: bold;
+	background: rgba(42, 121, 108, 0.8);
+	border: 1px solid #ccc;
+	border-radius: 8px;
+	padding: 5px;
+}
+
+input[type="button"], input[type=submit], input[type=reset] {
+	background-color: #4CAF50;
+	border: none;
+	border-radius: 4px;
+	color: #fff;
+	cursor: pointer;
+	margin-right: 10px;
+	padding: 10px;
+}
+
+input[type="button"]:hover, input[type=submit]:hover, input[type=reset]:hover
+	{
+	background-color: #3e8e41;
+}
+
+input[type="button"]:last-of-type, input[type=submit]:last-of-type,
+	input[type=reset]:last-of-type {
+	margin-right: 0;
+}
+
+.table .buttons {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.table .one, .table .two {
+	text-align: left;
+}
